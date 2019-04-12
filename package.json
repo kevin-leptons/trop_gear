@@ -1,29 +1,28 @@
 {
-  "name": "@trop/std",
+  "name": "@trop/gear",
   "version": "0.1.0",
-  "description": "Try to improve base of Javascript",
+  "description": "Essential improvement for Javascript on Node.js",
   "main": "lib/index.js",
   "scripts": {
-    "test": "mocha --recursive test"
+    "test": "mocha --exit --timeout 10000 test"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kevin-leptons/trop_std.git"
+    "url": "git+https://github.com/kevin-leptons/trop_gear.git"
   },
   "keywords": [
-    "std",
+    "gear",
     "algorithm",
     "data",
     "structure",
-    "error",
-    "handling"
+    "expanding"
   ],
   "author": "Kevin Leptons",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/kevin-leptons/trop_std/issues"
+    "url": "https://github.com/kevin-leptons/trop_gear/issues"
   },
-  "homepage": "https://github.com/kevin-leptons/trop_std#readme",
+  "homepage": "https://github.com/kevin-leptons/trop_gear#readme",
   "devDependencies": {
     "mocha": "^6.1.3"
   }

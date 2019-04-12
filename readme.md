@@ -1,17 +1,15 @@
-# @trop/std
+# @trop/gear
 
-Improve base of Javascript
+Essential improvement for Javascript on Node.js
 
-## Usage
-
-```bash
-const {NotImplementError} = require('@trop/std')
-
-throw new NotImplementError('Oops!')
+```js
+const {
+    Queue,
+    Stack,
+    Stopwatch
+} = require('@trop/gear')
 ```
 
-Components:
-
-* NotImplementError
-* NotExistedError
-* ExistedError
+* [Document](doc/index.md)
+* [Changelog](changelog.md)
+* [Contribution](contribution.md)
