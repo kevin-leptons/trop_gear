@@ -14,4 +14,5 @@ const {
 * [Changelog](changelog.md)
 * [Contribution](contribution.md)
 
-**Related**: [@trop/graph](https://github.com/kevin-leptons/trop_graph)
+**Related**: [@trop/graph](https://github.com/kevin-leptons/trop_graph),
+[@trop/engine](https://github.com/kevin-leptons/trop_engine)
