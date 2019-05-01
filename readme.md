@@ -13,3 +13,5 @@ const {
 * [Document](doc/index.md)
 * [Changelog](changelog.md)
 * [Contribution](contribution.md)
+
+**Related**: [@trop/graph](https://github.com/kevin-leptons/trop_graph)
