@@ -16,3 +16,4 @@ Additional Data Structures,  Algorithms and Utilities for JavaScript on Node.js
 * [Stack](stack.md) - Last in last out items
 * [Deferral](deferral.md) - A way to resolve a promise outside of constructor
 * [Stopwatch](stopwatch.md) - Measure elapsed time
+* [AsyncQueue](async_queue.md) - Asynchronous operation on queue

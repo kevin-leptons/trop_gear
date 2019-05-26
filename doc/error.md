@@ -38,15 +38,14 @@ const {error} = require('@trop/gear')
 * Input
     * `message` / `any` / `''` - Short description about error
 
-### Useless(message)
+### Closed(message)
 
 * Description
     * Some object provide life-time mechanism to terminate waiting on it.
-      After that object is change to CLOSED state, it does not allows
-      perform actions anymore. So it's called useless object and just wait
-      GC take it, unless it is re-open
+      If that object is change to CLOSED state, it does not allows
+      perform actions anymore. 
 * Input
-    * `message` / `any` / `''` - Short description about error
+    * message / any / '' - Short description about error
 
 ### Capacity(message)
 
