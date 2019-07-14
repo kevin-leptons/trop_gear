@@ -13,7 +13,8 @@ const {AsyncQueue} = require('@trop/std')
     * Create a new instance of queue
 * Input
     * `items` / `Array<any>` / `[]` - Preset items in queue, `items[0]` is
-      front of queue, `items[end]` is back of queue
+      front of queue, `items[end]` is back of queue. It is copy to internal of
+      queue intead of using directly.
     * `capacity` / `Number` / `8` - Maximum number of items in queue
 * Output
     * `AsyncQueue`

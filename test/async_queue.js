@@ -91,6 +91,14 @@ describe('AsyncQueue.constructor()', () => {
             message: 'Number of items is greater than capacity'
         })
     })
+
+    it('initialization array does not affects to queue', () => {
+        let init_arr = [1, 2, 3]
+        let q = new AsyncQueue(init_arr)
+
+        init_arr.push(4)
+        assert.equal(q.size, 3)
+    })
 })
 
 describe('AsyncQueue.size', () => {
@@ -233,6 +241,14 @@ describe('AsyncQueue.push()', () => {
         assert(triggered)
         assert.equal(r2, 1)
     })
+
+    it('does not affects to initialization array', async () => {
+        let init_arr = [1, 2, 3]
+        let q = new AsyncQueue(init_arr)
+
+        await q.push(4)
+        assert.equal(init_arr.length, 3)
+    })
 })
 
 describe('AsyncQueue.pop()', () => {
@@ -303,6 +319,14 @@ describe('AsyncQueue.pop()', () => {
         let push_trigger_waiting_on_pop = r1 === 1
 
         assert(push_trigger_waiting_on_pop)
+    })
+
+    it('does not affects to initialization array', async () => {
+        let init_arr = [1, 2, 3]
+        let q = new AsyncQueue(init_arr)
+
+        await q.pop()
+        assert.equal(init_arr.length, 3)
     })
 })
 
