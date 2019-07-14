@@ -13,7 +13,8 @@ const {Stack} = require('@trop/gear')
 * Description
     * Data structure for last in last out items
 * Input
-    * `items` /` Array<any>` / `[]` - Preset items, items[LAST] is top of stack
+    * `items` /` Array<any>` / `[]` - Preset items, items[LAST] is top of
+      stack.  Items is copy to internal of stack.
 * Exception
     * `TypeError` - Items must be an array
 

@@ -77,6 +77,14 @@ describe('Stack.constructor()', () => {
             message: 'Items must be an array'
         })
     })
+
+    it('initialization array does not affects to stack', () => {
+        let init_arr = [1, 2, 3]
+        let s = new Stack(init_arr)
+
+        init_arr.push(4)
+        assert.equal(s.size, 3)
+    })
 })
 
 describe('Stack.size', () => {
@@ -141,6 +149,14 @@ describe('Stack.push()', () => {
 
         s.push(function() {})
     })
+
+    it('does not affects to initialization array', () => {
+        let init_arr = [1, 2, 3]
+        let s = new Stack(init_arr)
+
+        s.push(4)
+        assert.equal(init_arr.length, 3)
+    })
 })
 
 describe('Stack.top()', () => {
@@ -183,6 +199,14 @@ describe('Stack.pop()', () => {
         assert.equal(top, 3)
         assert.equal(s.size, 2)
     })
+
+    it('does not affects to initialization array', () => {
+        let init_arr = [1, 2, 3]
+        let s = new Stack(init_arr)
+
+        s.pop()
+        assert.equal(init_arr.length, 3)
+    })
 })
 
 describe('Stack.clear()', () => {
@@ -198,5 +222,13 @@ describe('Stack.clear()', () => {
 
         s.clear()
         assert.equal(s.size, 0)
+    })
+
+    it('does not affects to initialization array', () => {
+        let init_arr = [1, 2, 3]
+        let s = new Stack(init_arr)
+
+        s.clear()
+        assert.equal(init_arr.length, 3)
     })
 })

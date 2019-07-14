@@ -4,6 +4,8 @@
 
 * Change Queue.constructor(items), items is copy to internal queue instead of
   using directly.
+* Change Stack.constructor(items), items is copy to internal stack instead of
+  using directly. 
 
 ## 0.2.0
 
