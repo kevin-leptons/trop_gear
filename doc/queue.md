@@ -14,7 +14,8 @@ const {Queue} = require('@trop/gear')
     * Data structure for first in first out items, fixed capacity
 * Input
     * `items` / `Array<any>` / `[]` - Preset items, items[0] is front and
-      items[LAST] is back of queue
+      items[LAST] is back of queue. Items is clone so it does not affects to
+      queue after initialization.
 * Exception
     * `TypeError` - Items must be an array
 

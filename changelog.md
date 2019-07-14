@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.3.0
+
+* Change Queue.constructor(items), items is copy to internal queue instead of
+  using directly.
+
 ## 0.2.0
 
 * Rename error.Useless to error.Closed

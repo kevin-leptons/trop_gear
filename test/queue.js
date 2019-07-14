@@ -77,6 +77,14 @@ describe('Queue.constructor()', () => {
             message: 'Items must be an array'
         })
     })
+
+    it('initialization array does not affects to queue', () => {
+        let init_arr = [1, 2, 3]
+        let q = new Queue(init_arr)
+
+        init_arr.push(4)
+        assert.equal(q.size, 3)
+    })
 })
 
 describe('Queue.size', () => {
@@ -147,6 +155,14 @@ describe('Queue.push()', () => {
 
         q.push(function() {})
     })
+
+    it('does not affects to initialization array', () => {
+        let init_arr = [1, 2, 3]
+        let q = new Queue(init_arr)
+
+        q.push(4)
+        assert.equal(init_arr.length, 3)
+    })
 })
 
 describe('Queue.pop()', () => {
@@ -168,6 +184,14 @@ describe('Queue.pop()', () => {
             let item = q.pop()
             assert.equal(item, i)
         }
+    })
+
+    it('does not affects to initialization array', () => {
+        let init_arr = [1, 2, 3]
+        let q = new Queue(init_arr)
+
+        q.pop()
+        assert.equal(init_arr.length, 3)
     })
 })
 
@@ -204,5 +228,13 @@ describe('Queue.clear()', () => {
 
         q.clear()
         assert.equal(q.size, 0)
+    })
+
+    it('does not affects to initialization arrray', () => {
+        let init_arr = [1, 2, 3]
+        let q = new Queue(init_arr)
+
+        q.clear()
+        assert.equal(init_arr.length, 3)
     })
 })
