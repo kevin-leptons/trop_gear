@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/kevin-leptons/trop_gear#readme",
   "devDependencies": {
+    "ajv": "^6.10.2",
     "mocha": "^6.1.3"
   }
 }

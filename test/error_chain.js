@@ -1,4 +1,5 @@
 const assert = require('assert')
+const Ajv = require('ajv')
 
 const {error} = require('../lib')
 
@@ -10,28 +11,76 @@ describe('error.error_chain', () => {
 
     it('error.error_chain.get_chain', () => {
         let e = _create_error_chain()
-        let chain = e.chain
-
-        assert.equal(Array.isArray(chain), true)
-        assert.equal(chain.length, 3)
-        assert.equal(chain[0].message, 'This is third error')
-        assert.equal(chain[1].message, 'This is second error')
-        assert.equal(chain[2].message, 'This is first error')
+        _verify_schema(_ERROR_CHAIN_SCHEMA, e.chain)
     })
 
-    it('error.error_chain.get_printable_chain', () => {
+    it('error.error_chain.get_origin_chain', () => {
         let e = _create_error_chain()
-        let chain = e.printable_chain
-
-        assert.equal(Array.isArray(chain), true)
-        assert.equal(chain.length, 3)
-        assert.equal(typeof chain[0], 'string')
-        assert.equal(typeof chain[1], 'string')
-        assert.equal(typeof chain[2], 'string')
+        _verify_schema(_ORIGIN_ERROR_CHAIN_SCHEMA, e.origin_chain)
     })
 })
 
 // private members
+
+const _ERROR_CHAIN_SCHEMA = {
+    type: 'array',
+    items: {
+        type: 'object',
+        additionalProperties: false,
+        required: [
+            'name',
+            'message',
+            'stack'
+        ],
+        properties: {
+            name: {
+                type: 'string'
+            },
+            message: {
+                type: 'string'
+            },
+            stack: {
+                type: 'array',
+                items: {
+                    type: 'string'
+                }
+            },
+            context: {}
+        }
+    }
+}
+
+const _ORIGIN_ERROR_CHAIN_SCHEMA = {
+    type: 'array',
+    items: {
+        type: 'object',
+        required: [
+            'name',
+            'message',
+            'stack'
+        ],
+        properties: {
+            name: {
+                type: 'string'
+            },
+            message: {
+                type: 'string'
+            },
+            stack: {
+                type: 'string'
+            }
+        }
+    }
+}
+
+function _verify_schema(schema, data) {
+    let ajv = new Ajv()
+    let valid = ajv.validate(schema, data)
+
+    if (!valid) {
+        throw Error(JSON.stringify(ajv.errors, null, 2))
+    }
+}
 
 function _create_error_chain() {
     let e1 = Error('This is first error')
