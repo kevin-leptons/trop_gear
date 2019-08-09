@@ -10,7 +10,7 @@ Additional Data Structures,  Algorithms and Utilities for JavaScript on Node.js
 
 ## Expanding
 
-* [error](error.md) - Additional error types
+* [error](error.md) - Additional error handling mechanism and types
 * [delay](delay.md) - Asynchronous waiting
 * [Queue](queue.md) - First in first out items
 * [Stack](stack.md) - Last in last out items

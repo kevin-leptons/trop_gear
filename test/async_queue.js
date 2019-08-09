@@ -456,23 +456,23 @@ describe('AsyncQueue.-performance', () => {
         assert(timelapse <= 6)
     }
 
-    it('push and pop 10 milion numbers', async () => {
+    it('push and pop 10 million numbers', async () => {
         await test_performace_with(1)
     })
 
-    it('push and pop 10 milion strings', async () => {
+    it('push and pop 10 million strings', async () => {
         await test_performace_with('this is a string')
     })
 
-    it('push and pop 10 milion array', async () => {
+    it('push and pop 10 million array', async () => {
         await test_performace_with([1, 2, 3])
     })
 
-    it('push and pop 10 milion objects', async () => {
+    it('push and pop 10 million objects', async () => {
         await test_performace_with({})
     })
 
-    it('push and pop 10 milion boolean', async () => {
+    it('push and pop 10 million boolean', async () => {
         await test_performace_with(true)
     })
 })

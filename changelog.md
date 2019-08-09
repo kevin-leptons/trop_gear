@@ -3,6 +3,9 @@
 ## v0.4.0
 
 * Add `error.ErrorChain`
+* Change: `error.NotImplemented`, `error.NotFound`, `error.Conflict`,
+  `error.InfiniteLoop`, `error.Closed` , `error.Capacity` extends from
+  `error.ErrorChain` instead of `Error`
 
 ## v0.3.0
 
