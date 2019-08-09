@@ -1,6 +1,6 @@
 # Error
 
-Additional handling mechanism and error types
+Additional error handling mechanism and error types
 
 * [ErrorChain](error_error_chain.md)
 * [NotImplemented](error_not_implemented.md)
